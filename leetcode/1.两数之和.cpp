@@ -1,8 +1,13 @@
-#include <iostream>
+/*
+ * @lc app=leetcode.cn id=1 lang=cpp
+ *
+ * [1] 两数之和
+ */
 #include <vector>
 
 using namespace std;
 
+// @lc code=start
 class Solution {
  public:
   vector<int> twoSum(vector<int>& nums, int target) {
@@ -19,12 +24,4 @@ class Solution {
     return r;
   }
 };
-
-int main() {
-  Solution s;
-  vector<int> nums{2, 7, 11, 15};
-  int target = 9;
-  vector<int> r = s.twoSum(nums, target);
-  cout << r[0] << " " << r[1] << endl;
-  return 0;
-}
+// @lc code=end
