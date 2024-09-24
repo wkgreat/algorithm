@@ -38,11 +38,16 @@ class Solution {
   }
 
   vector<int> findRedundantConnection(vector<vector<int>>& edges) {
+    // 边的个数，如果是树，则节点的个数=边的个数+1
+    // 由于多了一条边，所以节点个数为边的个数+1
     int n = edges.size();
+    // 节点编号从1开始，所以索引0不存数据，所以vector大小为n+1
     vector<int> parent(n + 1);
+    // 初始化并查集
     for (int i = 1; i <= n; ++i) {
       parent[i] = i;
     }
+    // 进行迭代
     for (auto& edge : edges) {
       int node1 = edge[0], node2 = edge[1];
       if (Find(parent, node1) != Find(parent, node2)) {
